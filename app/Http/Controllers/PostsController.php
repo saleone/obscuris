@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Post;
 
 class PostsController extends Controller
 {
@@ -35,8 +36,9 @@ class PostsController extends Controller
      */
     public function store(Requests\PostRequest $request)
     {
-        // persist the post
-        // redirect to post page
+        Post::create($request->all());
+        //flash message
+        return redirect()->back();
     }
 
     /**
