@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 
 class PostsController extends Controller
 {
@@ -32,9 +33,10 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\PostCreateRequest $request)
+    public function store(Requests\PostRequest $request)
     {
-        //
+        // persist the post
+        // redirect to post page
     }
 
     /**
