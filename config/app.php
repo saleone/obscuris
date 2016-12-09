@@ -136,6 +136,10 @@ return [
     */
 
     'providers' => [
+        /*
+         * Flash message provider
+         */
+         Laracasts\Flash\FlashServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...

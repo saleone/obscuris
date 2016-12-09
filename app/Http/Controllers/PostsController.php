@@ -37,7 +37,7 @@ class PostsController extends Controller
     public function store(Requests\PostRequest $request)
     {
         Post::create($request->all());
-        //flash message
+        flash("Post saved!");
         return redirect()->back();
     }
 
