@@ -11,7 +11,7 @@
   </head>
   <body style="background-image: url({{ '/img/landing-bg.jpg' }})">
       <div class="footer">
-        <a href="#">ENTER</a>
+        <a href="/posts">ENTER</a>
       </div>
   </body>
 </html>
