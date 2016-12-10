@@ -1,6 +1,7 @@
 @extends('layout')
 @section('title', 'News')
 @section('content')
+
 @foreach ($posts as $post)
 <div class="post-preview">
   <h2 class="post-title">
@@ -13,6 +14,18 @@
 </div>
 <hr>
 @endforeach
+
+@if (count($posts) == 0)
+<div class="post-preview">
+  <h2 class="post-title">It's empty!</h2>
+  <h3 class="post-subtitle">
+    Please come back later, site authors will be busy in the meantime. =) <br><br>
+    For more information contact <a href='mailto:admin@obscurisservices.com'>admin</a>
+    or try to find something else here. <br> <br>
+  </h3>
+</div>
+@endif
+
 @if ($posts->total() > $posts->perPage())
 <ul class="pager">
   @if ($posts->nextPageUrl())
