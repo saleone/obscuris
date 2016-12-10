@@ -48,7 +48,7 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
-            <h1>Obscuris Contract <br> Services</h1>
+          <h1>&nbsp;</h1>
             <span class="subheading"></span>
           </div>
         </div>
