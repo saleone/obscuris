@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/posts', 'PostsController');
+Route::get('/posts/delete/{post}', 'PostsController@destroy');
 
 Auth::routes();
 

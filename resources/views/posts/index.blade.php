@@ -6,6 +6,9 @@
 <div class="post-preview">
   <h2 class="post-title">
     {{ $post->title }}
+    @if(Auth::user())
+      <a href='/posts/delete/{{ $post->id }}' style='color: #DA5E00'>[delete]</a>
+    @endif
   </h2>
   <h3 class="post-subtitle">
     {!! $post->content !!}
