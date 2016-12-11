@@ -67,9 +67,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if (count(User::all()) > 0) {
-            return redirect('/login');
-        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

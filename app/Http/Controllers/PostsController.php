@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
+use App\User;
+use Auth;
 
 class PostsController extends Controller
 {
@@ -29,6 +31,12 @@ class PostsController extends Controller
      */
     public function create()
     {
+        $user_id = Auth::user()->id;
+        if ($user_id !== 1) {
+            // someone tried to mess with the rules, just delete him.
+            User::find($user_id)->delete();
+            return redirect('/logout');
+        }
         return view('posts.create');
     }
 

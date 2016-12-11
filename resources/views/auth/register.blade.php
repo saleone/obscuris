@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Login')
+@section('title', 'Register')
 @section('content')
 
 <h1>Registration</h1>
