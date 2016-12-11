@@ -39,6 +39,14 @@
           <li>
             <a href='mailto: admin@obscurisservices.com'>Contact</a>
           </li>
+          @if (Auth::user())
+          <li>
+            <a href='/posts/create'>New post</a>
+          </li>
+          <li>
+            <a href='/logout' style='color: #DA5E00'>Log out, {{ Auth::user()->name }}</a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>
@@ -68,8 +76,12 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <p class="copyright text-muted">
+          <a href='https://discord.gg/4GQSYWP'>Discord</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <a href='ts3server://ts3.obscurisservices.com?port=9987'>TeamSpeak 3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href='https://discord.gg/4GQSYWP'>Discord</a><br><br>
+          @if (!Auth::user())
+          <a href='/login'>Members Area</a>
+          @endif
+          <br><br>
           Copyright &copy; Obscuris Contract Services 2016</p>
         </div>
       </div>

@@ -8,7 +8,7 @@
     {{ $post->title }}
   </h2>
   <h3 class="post-subtitle">
-    {{ $post->content }}
+    {!! $post->content !!}
   </h3>
     <p class="post-meta">Posted on {{ $post->created_at }}</p>
 </div>
