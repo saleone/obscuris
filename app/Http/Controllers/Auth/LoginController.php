@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App;
+use App\User;
+use Redirect;
+
 
 class LoginController extends Controller
 {
@@ -35,6 +38,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+
+        if (!User::find(1)) Redirect::to('/register')->send();
         $this->middleware('guest', ['except' => 'logout']);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Redirect;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -36,6 +37,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        // Single user mode for now
+        if (User::find(1)) Redirect::to('/login')->send();
         $this->middleware('guest');
     }
 

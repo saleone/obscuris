@@ -31,12 +31,6 @@ class PostsController extends Controller
      */
     public function create()
     {
-        $user_id = Auth::user()->id;
-        if ($user_id !== 1) {
-            // someone tried to mess with the rules, just delete him.
-            User::find($user_id)->delete();
-            return redirect('/logout');
-        }
         return view('posts.create');
     }
 
@@ -51,40 +45,6 @@ class PostsController extends Controller
         Post::create($request->all());
         flash("Post saved!");
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**

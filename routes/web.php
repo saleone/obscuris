@@ -15,11 +15,19 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::resource('/posts', 'PostsController');
+// Post routes
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/create', 'PostsController@create');
+Route::post('/posts', 'PostsController@store');
 Route::get('/posts/delete/{post}', 'PostsController@destroy');
 
-Auth::routes();
+// Login routes
+Route::get('/login', 'Auth\LoginController@showLoginForm');
+Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/home', 'HomeController@index');
-
+// Logout routes
 Route::get('/logout', 'Auth\LoginController@logout');
+
+// Registration routes
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('/register', 'Auth\RegisterController@register');
