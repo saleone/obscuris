@@ -28,17 +28,4 @@ class PostRequest extends FormRequest
             'content' => 'required',
         ];
     }
-
-    /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            'title.required' => 'Title is required.',
-            'content.required' => 'Plese write the content of the post.'
-        ];
-    }
 }
