@@ -28,11 +28,26 @@
   </div>
   <div class="form-group">
     <label for="content">Content:</label>
-    <textarea type='text' name='content' id='content' class='form-control' rows=10>{{ old('content') }}</textarea>
+    <textarea type='text' name='content' id='content' class='form-control has_editor' rows=10>{{ old('content') }}</textarea>
   </div>
   <hr>
   <div class="form-group">
     <button type='submit' name='submit' id='submit' class='btn btn-primary' value='Submit'>Submit</button>
   </div>
 </form>
+<script src="http://cdn.tinymce.com/4/plugins/openlink/plugin.min.js"></script>
+<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>tinymce.init(
+  {
+    selector: ".has_editor",
+    menubar: false,
+      plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste imagetools"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+})
+
+</script>
 @stop
