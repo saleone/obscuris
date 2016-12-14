@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Response;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +13,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
+Route::get('/', function (Request $req) {
+    $cookie_name = 'landing_page_visited';
+    $is_visited = isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : false;
+
+    // Dont show the landing page if visitor seen it already
+    if ($is_visited) return redirect('/posts');
+
+    $response = new Response(view('landing'));
+    return $response->withCookie(cookie()->forever($cookie_name, true));
 });
 
 // Post routes
