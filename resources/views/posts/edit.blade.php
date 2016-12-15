@@ -1,9 +1,9 @@
 @extends('layout')
 
-@section('title', 'New post')
+@section('title', $post->title)
 
 @section('content')
-<h1>Create new post</h1>
+<h1>Edit post</h1>
 <br>
 @if (count($errors) > 0)
 <div class="alert alert-danger">
@@ -20,19 +20,19 @@
   {!! session('flash_notification.message') !!}
 </div>
 @endif
-<form action="/posts" method="POST">
+<form action="/posts/edit/{{ $post->id }}" method="POST">
 {{ csrf_field() }}
   <div class="form-group">
     <label for="title">Title:</label>
-    <input type='text' name='title' id='title' class='form-control' value="{{ old('title') }}">
+    <input type='text' name='title' id='title' class='form-control' value="{{ old('title', $post->title) }}">
   </div>
   <div class="form-group">
     <label for="content">Content:</label>
-    <textarea type='text' name='content' id='content' class='form-control has_editor' rows=10>{{ old('content') }}</textarea>
+    <textarea type='text' name='content' id='content' class='form-control has_editor' rows=10>{{ old('content', $post->content) }}</textarea>
   </div>
   <hr>
   <div class="form-group">
-    <button type='submit' name='submit' id='submit' class='btn btn-primary' value='Submit'>Create post</button>
+    <button type='submit' name='submit' id='submit' class='btn btn-primary' value='Submit'>Update</button>
   </div>
 </form>
 @include('partials.editor')

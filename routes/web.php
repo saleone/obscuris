@@ -24,11 +24,19 @@ Route::get('/', function (Request $req) {
     return $response->withCookie(cookie()->forever($cookie_name, true));
 });
 
-// Post routes
+// Display the posts (main page)
 Route::get('/posts', 'PostsController@index');
+
+// Create posts
 Route::get('/posts/create', 'PostsController@create');
 Route::post('/posts', 'PostsController@store');
+
+// Delete the post
 Route::get('/posts/delete/{post}', 'PostsController@destroy');
+
+// Update/edit the post
+Route::get('/posts/edit/{post}', 'PostsController@edit');
+Route::post('/posts/edit/{post}', 'PostsController@update');
 
 // Login routes
 Route::get('/login', 'Auth\LoginController@showLoginForm');

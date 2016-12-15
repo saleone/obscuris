@@ -10,9 +10,13 @@ use Auth;
 
 class PostsController extends Controller
 {
+    /**
+     * Contructor
+     */
     public function __construct() {
         $this->middleware('auth', ['except' => 'index']);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -57,5 +61,38 @@ class PostsController extends Controller
     {
         Post::find($id)->delete();
         return redirect('/posts');
+    }
+
+    /**
+     * Show the edit form.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Reponse
+     */
+    public function edit($id)
+    {
+        $post = Post::find($id);
+        if (!$post) abort(404);
+        return view('posts.edit')->with('post', Post::find($id));
+    }
+
+    /**
+     * Persist update changes.
+     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update($id, Request $req)
+    {
+        $this->validate($req, [
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+        $post = Post::find($id);
+        $post->title = $req->title;
+        $post->content = $req->content;
+        $post->save();
+        flash("Post updated!");
+        return redirect()->back();
     }
 }

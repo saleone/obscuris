@@ -6,14 +6,17 @@
 <div class="post-preview">
   <h2 class="post-title">
     {{ $post->title }}
-    @if(Auth::user())
-      <a href='/posts/delete/{{ $post->id }}' style='color: #DA5E00'>[delete]</a>
-    @endif
   </h2>
   <h3 class="post-subtitle">
     {!! $post->content !!}
   </h3>
-    <p class="post-meta">Posted on {{ $post->created_at }}</p>
+    <p class="post-meta">
+      Posted on {{ $post->created_at }}
+      @if(Auth::user())
+      <a href='/posts/edit/{{ $post->id }}' style='color: #DA5E00'>edit</a> |
+      <a href='/posts/delete/{{ $post->id }}' style='color: #DA5E00'>delete</a>
+      @endif
+    </p>
 </div>
 <hr>
 @endforeach
