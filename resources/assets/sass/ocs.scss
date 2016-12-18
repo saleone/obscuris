@@ -1,13 +1,16 @@
 /* Colors */
 
-$obs_fonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$obs_fonts: 'Open Sans',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
 $obs_red: #2f0000;
 $obs_white: #e5ded8;
 $obs_dblue: #0c0934;
 $obs_lblue: #cacee8;
 $obs_comment: #777;
 $obs_navhigh: #e7e7e7;
-
 body {
   font-family: $obs_fonts;
   font-size: 20px;
@@ -54,6 +57,7 @@ hr {
   z-index: 3;
   font-family: $obs_fonts;
 }
+
 .navbar-custom .navbar-header .navbar-toggle {
   font-weight: 800;
   text-transform: uppercase;
@@ -85,8 +89,8 @@ hr {
     color: $obs_lblue;
     padding: 20px;
   }
-  .navbar-custom .nav > li > a:hover,
-  .navbar-custom .nav > li > a:focus {
+  .navbar-custom .nav>li>a:hover,
+  .navbar-custom .nav>li>a:focus {
     color: $obs_lblue;
     text-decoration: overline;
   }
@@ -233,13 +237,28 @@ ul.dropdown-menu {
   border-radius: unset;
   padding: 20px 0 20px 0;
 }
-.dropdown-menu  > li > a {
+
+.dropdown-menu>li>a {
   min-width: 300px;
   padding: 20px;
   color: $obs_red;
 }
 
-.dropdown-menu > li > a:hover {
+.dropdown-menu>li>a:hover {
   background: $obs_lblue;
+  color: $obs_red;
+}
+
+li.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+li.dropdown:hover>a.dd {
+  color: $obs_red;
+}
+
+.navbar-nav>li.dropdown:hover {
+  background: $obs_navhigh;
   color: $obs_red;
 }
