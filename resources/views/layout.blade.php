@@ -34,10 +34,20 @@
             <a href="/posts">Home</a>
           </li>
           <li>
-            <a href='https://units.arma3.com/unit/obscuris'>Arma3 Page</a>
           </li>
-          <li>
-            <a href='mailto: admin@obscurisservices.com'>Contact</a>
+          <li role='presentation' class='dropdown'>
+            <a class='dropdown-toggle' data-toggle='dropdown' href='#'
+               role='button' aria-haspopup='true' aria-expanded='false'>
+              Contact <span class='caret'></span>
+            </a>
+            <ul class='dropdown-menu'>
+              <li>
+                <a target='_blank' href='https://units.arma3.com/unit/obscuris'>Arma 3 Page</a>
+              </li>
+              <li>
+                <a href='mailto: admin@obscurisservices.com'>E-mail</a>
+              </li>
+            </ul>
           </li>
           @if (Auth::user())
           <li>
