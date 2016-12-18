@@ -16,7 +16,7 @@ tinymce.init(
   ],
   toolbar: [
     "undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    "fontsizeselect | forecolor backcolor"
+    "fontsizeselect | forecolor backcolor | removeformat"
   ]
 })
 </script>
