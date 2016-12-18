@@ -5,8 +5,9 @@ tinymce.init(
   selector: ".has_editor",
   menubar: false,
     plugins: [
-      "lists link image textcolor",
+      "lists link image textcolor paste",
   ],
+  paste_as_text: true,
   formats: {
     forecolor: {inline: 'span', classes: 'forecolor', styles:{color: "%value"}}
   },
@@ -15,7 +16,7 @@ tinymce.init(
   ],
   toolbar: [
     "undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    "fontsizeselect | forecolor backcolor"
+    "fontsizeselect | forecolor backcolor | removeformat"
   ]
 })
 </script>
