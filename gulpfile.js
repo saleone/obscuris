@@ -14,8 +14,8 @@ require('laravel-elixir-vue-2');
  */
 
 elixir(mix => {
-    mix.sass('ocs.scss')
-        .sass('landing.scss')
+    mix.sass('ocs.sass')
+        .sass('landing.sass')
         .webpack('ocs.js')
         .copy('resources/assets/img/landing-bg.jpg', 'public/img/landing-bg.jpg')
         .copy('resources/assets/img/home-bg.jpg', 'public/img/home-bg.jpg');

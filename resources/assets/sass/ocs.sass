@@ -1,102 +1,85 @@
-/* Colors */
-
-$obs_fonts: 'Open Sans',
-'Helvetica Neue',
-Helvetica,
-Arial,
-sans-serif;
+$obs_fonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $obs_red: #2f0000;
 $obs_white: #e5ded8;
 $obs_dblue: #0c0934;
 $obs_lblue: #cacee8;
 $obs_comment: #777;
 $obs_navhigh: #e7e7e7;
-body {
+
+body
   font-family: $obs_fonts;
   font-size: 20px;
   background: $obs_white;
-}
 
-p {
+p
   line-height: 1.5;
   margin: 30px 0;
-}
 
-p a {
+p a
   text-decoration: underline;
-}
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6
   font-family: $obs_fonts;
   font-weight: 800;
-}
 
-a {
+a
   color: $obs_dblue;
-}
 
 a:hover,
-a:focus {
+a:focus
   color: $obs_red;
-}
 
-hr {
+hr
   border-color: $obs_red;
-}
 
-.navbar-custom {
+.navbar-custom
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 3;
   font-family: $obs_fonts;
-}
 
-.navbar-custom .navbar-header .navbar-toggle {
+.navbar-custom .navbar-header .navbar-toggle
   font-weight: 800;
   text-transform: uppercase;
   font-size: 12px;
-}
 
-.navbar-custom .nav li a {
+.navbar-custom .nav li a
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
-}
 
-@media only screen and (min-width: 768px) {
-  .navbar-custom {
+@media only screen and (min-width: 768px)
+  .navbar-custom
     background: transparent;
     border-bottom: 1px solid transparent;
-  }
-  .navbar-custom .navbar-brand {
-    color: $obs_white;
-    padding: 20px;
-  }
-  .navbar-custom .navbar-brand:hover,
-  .navbar-custom .navbar-brand:focus {
-    color: $obs_white;
-    text-decoration: overline;
-  }
-  .navbar-custom .navbar-nav>li>a {
-    color: $obs_lblue;
-    padding: 20px;
-  }
-  .navbar-custom .nav>li>a:hover,
-  .navbar-custom .nav>li>a:focus {
-    color: $obs_lblue;
-    text-decoration: overline;
-  }
-}
 
-.intro-header {
+  .navbar-custom .navbar-brand
+    color: $obs_white;
+    padding: 20px;
+
+  .navbar-custom .navbar-brand:hover,
+  .navbar-custom .navbar-brand:focus
+    color: $obs_white;
+    text-decoration: overline;
+
+  .navbar-custom .navbar-nav>li>a
+    color: $obs_lblue;
+    padding: 20px;
+
+  .navbar-custom .nav>li>a:hover,
+  .navbar-custom .nav>li>a:focus
+    color: $obs_lblue;
+    text-decoration: overline;
+
+.intro-header
   background: no-repeat center center;
   background-attachment: scroll;
   -webkit-background-size: cover;
@@ -104,75 +87,62 @@ hr {
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 50px;
-}
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px)
   .intro-header .site-heading,
   .intro-header .post-heading,
-  .intro-header .page-heading {
+  .intro-header .page-heading
     padding: 150px 0;
-  }
-}
 
-.post-preview>.post-title {
+.post-preview>.post-title
   color: $obs_red;
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 40px;
-}
 
-.post-preview>.post-subtitle {
+.post-preview>.post-subtitle
   color: $obs_red;
   margin: 0;
   font-weight: 300;
   margin-bottom: 20px;
   font-size: 15pt;
-}
 
-.post-preview>.post-meta {
+.post-preview>.post-meta
   color: $obs_comment;
   font-size: 18px;
   font-style: italic;
   margin-top: 0;
-}
 
 .post-preview>.post-meta>a:hover,
-.post-preview>.post-meta>a:focus {
+.post-preview>.post-meta>a:focus
   color: $obs_red;
   text-decoration: underline;
-}
 
-@media only screen and (min-width: 768px) {
-  .post-preview>.post-title {
+@media only screen and (min-width: 768px)
+  .post-preview>.post-title
     font-size: 36px;
-  }
-}
 
-footer {
+footer
   background: $obs_dblue;
   padding: 50px 0 65px;
-}
 
-footer .list-inline {
+footer .list-inline
   margin: 0;
   padding: 0;
-}
 
-footer .copyright {
+footer .copyright
   font-family: $obs_fonts;
   font-weight: bolder;
   font-size: 10pt;
   text-align: center;
   margin-bottom: 0;
   color: $obs_white;
-}
 
-.pager {
+.pager
   margin: 20px 0 0;
-}
 
 .pager li>a,
-.pager li>span {
+.pager li>span
   font-family: $obs_fonts;
   text-transform: uppercase;
   font-size: 14px;
@@ -181,84 +151,67 @@ footer .copyright {
   padding: 15px 25px;
   background-color: $obs_white;
   border-radius: 0;
-}
 
 .pager li>a:hover,
-.pager li>a:focus {
+.pager li>a:focus
   color: $obs_white;
   background-color: $obs_red;
-}
 
-::-moz-selection {
+::-moz-selection
   color: $obs_white;
   text-shadow: none;
   background: $obs_red;
-}
 
-::selection {
+::selection
   color: $obs_white;
   text-shadow: none;
   background: $obs_red;
-}
 
-img::selection {
+img::selection
   color: $obs_white;
   background: transparent;
-}
 
-img::-moz-selection {
+img::-moz-selection
   color: $obs_white;
   background: transparent;
-}
 
-body {
+body
   -webkit-tap-highlight-color: $obs_red;
-}
 
-footer a {
+footer a
   color: $obs_lblue;
   text-decoration: none;
-}
 
-footer a:hover {
+footer a:hover
   text-decoration: overline;
   color: $obs_lblue;
-}
 
-a:visited {
-  /* Reset visited links */
+a:visited
   text-decoration: inherit;
-}
 
-ul.dropdown-menu {
+ul.dropdown-menu
   border: 0;
   background: $obs_navhigh;
   box-shadow: unset;
   border-radius: unset;
   padding: 20px 0 20px 0;
-}
 
-.dropdown-menu>li>a {
+.dropdown-menu>li>a
   min-width: 300px;
   padding: 20px;
   color: $obs_red;
-}
 
-.dropdown-menu>li>a:hover {
+.dropdown-menu>li>a:hover
   background: $obs_lblue;
   color: $obs_red;
-}
 
-li.dropdown:hover .dropdown-menu {
+li.dropdown:hover .dropdown-menu
   display: block;
   margin-top: 0;
-}
 
-li.dropdown:hover>a.dd {
+li.dropdown:hover>a.dd
   color: $obs_red;
-}
 
-.navbar-nav>li.dropdown:hover {
+.navbar-nav>li.dropdown:hover
   background: $obs_navhigh;
   color: $obs_red;
-}
